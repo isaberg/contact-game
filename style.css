@@ -1,0 +1,70 @@
+body * {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: linear-gradient(rgba(0,0,125,.3),white,rgba(100,0,0,.2),white,rgba(0,0,125,.2))
+}
+
+.wrapper {
+    position: relative;
+    height: calc(100vh - 150px);
+    padding: 50px;
+    border: 7px solid black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+footer {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+
+}
+.footer ul {
+  display: inline-block;
+  vertical-align: baseline;
+  padding: 0;
+}
+
+.footer ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0 30px 0px 0px;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:link {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration-color: black
+  color: black;
+}
+
+a:visited {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration-color: black
+  color: black;
+}
+
+a:hover {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration-color: black
+  color: black;
+}
+
+a:active {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: underline;
+  text-decoration-color: black
+  color: black;
+}
