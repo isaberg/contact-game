@@ -9,62 +9,115 @@ body {
 .wrapper {
     position: relative;
     height: calc(100vh - 150px);
-    padding: 50px;
-    border: 7px solid black;
+    padding: 40px;
+    border: 7px crimson;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     flex: 1;
     overflow: hidden;
+    border-style: groove;
 }
 
-footer {
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
+header {
+  position: relative;
+  height: calc(100vh - 100px);
+  padding: 0px;
+  border: 7px crimson;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+  border-style: groove;
+  white-space: nowrap;
 
 }
-.footer ul {
-  display: inline-block;
-  vertical-align: baseline;
-  padding: 0;
+
+h1 {
+  justify-content: center;
+  max-width: 600px;
+  text-align: center;
+  margin: 10px auto 5px auto;
+  font-size: 60px;
+  font-stretch: expanded;
+}
+h2 {
+  color: crimson;
+  text-align: center;
+  padding: 0px;
+  margin: 0px auto 10px auto;
+  line-height: 10px;
+
+}
+p {
+  justify-content: center;
+  line-height: 15px;
+  text-align: center;
+  margin: 5px 10px;
+  font-weight: bold;
 }
 
-.footer ul li {
-  display: inline-block;
-  list-style-type: none;
-  padding: 0 30px 0px 0px;
+button {
+  max-width: 200px;
+  justify-content: center;
+  text-align: center;
+  margin: 5px auto;
+  font-family: 'Montserrat', sans-serif;
+  color: blue;
   font-size: 18px;
 }
 
-a {
-  text-decoration: none;
-  color: black;
+.seconds, .secondsText {
+  border-color: blue;
+  font-weight: bold;
+  font-size: 20px
+}
+.wordLevel,.wordLevelText {
+  border-color: crimson;
+  font-weight: bold;
+  font-size: 20px
+}
+.promptBox,.promptBoxText {
+  border-color: blue;
+  font-weight: bold;
+  font-size: 20px
 }
 
-a:link {
-  font-family: 'Montserrat', sans-serif;
-  text-decoration-color: black
-  color: black;
+main {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+div {
+  position: relative;
+  height: calc(100vh - 100px);
+  padding: 10px;
+  border: 7px crimson;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+  border-style: groove;
+  white-space: nowrap;
+  text-align: center;
 }
 
-a:visited {
-  font-family: 'Montserrat', sans-serif;
-  text-decoration-color: black
-  color: black;
+.gametext {
+  font-weight: bold;
 }
 
-a:hover {
-  font-family: 'Montserrat', sans-serif;
-  text-decoration-color: black
-  color: black;
+.seconds {
+  font-style: italic;
 }
 
-a:active {
-  font-family: 'Montserrat', sans-serif;
-  text-decoration: underline;
-  text-decoration-color: black
-  color: black;
+.wordLevel {
+font-style: italic;
+}
+
+.promptBox {
+  font-style: italic;
 }

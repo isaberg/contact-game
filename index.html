@@ -11,31 +11,38 @@
 </head>
 <body>
   <div class="wrapper">
-    <header class="instructions">
+    <header>
       <h1>CONTACT</h1>
-      <h2>Good with words?</h2>
-      <p>Every time you complete a word in time, you advance to the next level. See how high you can go!</p>
-      <p>When you are ready, click play. Hint: all the words start with A!</p>
+      <h2>THE GAME</h2>
+      <p>Look at the prompt, and guess the correct word in time!</p>
+      <p>There are 15 levels - see how high you can go!</p>
+      <p>All the words start with "A" - when ready, click Play!</p>
+      <button id="play">PLAY
+      </button>
+      <button id="reset">END GAME
+      </button>
     </header>
 
-    <main>
-      <div class="seconds game">10
-      </div>
-      <div class="game">TIME REMAINING
-      </div>
-      <div class="wordLevel game">5
-      </div>
-      <div class="game">LEVEL
-      </div>
-      <div class="promptBox">PROMPT HERE
-      </div>
-      <form id="form">
+    <main class="gameText">
+      <form class="userInput" autocomplete="off">
           <input type="text" id="userWord">
           </input>
 
           <button id="submit">Input Word
           </button>
       </form>
+      <div class="secondsText">SECONDS REMAINING
+      </div>
+      <div class="seconds">10
+      </div>
+      <div class="wordLevelText">LEVEL
+      </div>
+      <div class="wordLevel">
+      </div>
+      <div class="promptBoxText">PROMPT
+      </div>
+      <div class="promptBox">
+      </div>
     </main>
   </div>
   <script src="./scripts/script.js"> </script>
