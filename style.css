@@ -31,14 +31,13 @@ header {
   flex: 1;
   border-style: groove;
   white-space: nowrap;
-
 }
 
 h1 {
   justify-content: center;
   max-width: 600px;
   text-align: center;
-  margin: 10px auto 5px auto;
+  margin: 0px auto;
   font-size: 60px;
   font-stretch: expanded;
 }
@@ -59,10 +58,11 @@ p {
 }
 
 button {
+  display: inline;
+  align-items: stretch;
   max-width: 200px;
-  justify-content: center;
   text-align: center;
-  margin: 5px auto;
+  margin: 0px auto;
   font-family: 'Montserrat', sans-serif;
   color: blue;
   font-size: 18px;
@@ -85,12 +85,14 @@ button {
 }
 
 main {
+  position: relative;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  flex: 1;
+  flex: 1.75;
   overflow: hidden;
 }
+
 div {
   position: relative;
   height: calc(100vh - 100px);
