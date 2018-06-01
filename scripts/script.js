@@ -1,12 +1,13 @@
 const wordArray = ["a", "an", "axe", "army", "attic", "abacus", "antonym", "anaconda", "amendment", "adventurer", "anachronism", "abbreviation", "advertisement","acknowledgment", "agriculturalist"]
 const wordPrompt = ["indefinite article", "the other indefinite article", "attacks odor and trees", "Ain't Really Marines Yet", "haunted part of the house", "calculator before there were numbers", "opposite", "don't want none unless you got buns, hun", "ended Prohibition", "Odysseus was this", "a jetpack in the Dark Ages", "shortened form", "Whassssss upppppp!", "I owe all my skills to General Assembly.", "a farmer"]
+const htmlBody = document.querySelector('body')
 
 const seconds = 10
 var temp
 var timeRemaining
 var wordLevel = 0
 var timer
-var toggle = true
+var playAuth = true
 
 const levelDOM = document.querySelector('.wordLevel')
 const secondsDOM = document.querySelector('.seconds')
@@ -17,9 +18,15 @@ const playDOM = document.querySelector('#play')
 const resetDOM = document.querySelector('#reset')
 
 function reset () {
+  if (playAuth === false) {
   stopInterval()
   secondsDOM.innerHTML = seconds
   alert(`Game over! You got to level ${wordLevel}!`)
+  togglePlay()
+  }
+  else {
+    alert("You can't end a game you haven't started!")
+  }
 }
 
 function resetTimer () {
@@ -27,11 +34,12 @@ function resetTimer () {
 }
 
 function togglePlay() {
-  toggle = !toggle
+  playAuth = !playAuth
 }
 
 function play () {
-  if (toggle === true) {
+  secondsDOM.innerHTML = seconds
+  if (playAuth === true) {
   togglePlay()
   timer = window.setInterval(interval, 1000)
   wordLevel = 1
@@ -42,7 +50,6 @@ function play () {
   else {
   alert("You're already playing!")
   }
-
 }
 
 function levelUp () {
@@ -85,7 +92,6 @@ function wordCheck (word) {
   }
 }
 
-
 function interval () {
   timeRemaining = parseInt(secondsDOM.innerHTML, 10)
   if(timeRemaining === 0) {
@@ -102,100 +108,20 @@ function stopInterval () {
     clearTimeout(timer)
   }
 
+function notify (e) {
+  console.log(e)
+}
+
 buttonDOM.addEventListener('click', wordGrab)
 inputDOM.addEventListener('keydown', wordGrabEnter)
 playDOM.addEventListener('click', play)
 resetDOM.addEventListener('click', reset)
 
 
-
 /*
+htmlBody.addEventListener('mousemove', dynaBack)
 
-function countdown () {
-  let tempSeconds = parseInt(secondsDOM.innerHTML, 10)
-
-  if (tempSeconds == 0) {
-    temp = document.querySelector('.seconds')
-    temp.innerHTML = "TIME IS UP"
-    reset()
-  }
-  else {
-    tempSeconds = tempSeconds - 1
-    temp = document.querySelector('.seconds')
-    temp.innerHTML = tempSeconds
-    let timer = setTimeout(countdown, 1000)
-  }
+function dynaBack(e){
+  document.body.style.background = `linear-gradient(rgba(0,0,${e.screenX+200},${(e.screenY/1500)+(e.screenX/3000)}),white,rgba(${e.screenX+100},0,0,.2}),white,rgba(0,0,${e.screenY+100},${(e.screenY/1500)+(e.screenX/3000)})`
 }
-
-
-
-/////////functional countdown timer
-
-function countdown () {
-  seconds = parseInt(secondsDOM.innerHTML,10)
-
-  if (seconds == 1) {
-    temp = document.querySelector('.seconds')
-    temp.innerHTML = "TIME IS UP"
-    reset()
-    stopCountdown()
-    seconds = seconds + 10
-  }
-  else {
-    seconds = seconds - 1
-    temp = document.querySelector('.seconds')
-    temp.innerHTML = seconds
-    setTimeout(countdown, 1000)
-  }
-}
-
-
-// alternate failing myCountdown
-function countdown () {
-  seconds = 10
-  myCountdown = setTimeout(
-    //why do I need this for countdown to work?
-    seconds = parseInt(secondsDOM.innerHTML,10)
-
-    if (seconds == 0) {
-      temp = document.querySelector('.seconds')
-      temp.innerHTML = "TIME IS UP"
-      stopCountdown()
-      reset()
-      seconds = seconds + 10
-    }
-    else {
-      seconds = seconds - 1
-      temp = document.querySelector('.seconds')
-      temp.innerHTML = seconds
-    }), 1000)
-}
-//experimental countdown - why fail after Round 1?
-
-function countdown () {
-  var tempSeconds = seconds
-  var myCountdown = setTimeout(function() {
-    if (tempSeconds == 0) {
-      temp = document.querySelector('.seconds')
-      temp.innerHTML = 'TIME IS UP'
-      reset()
-      stopCountdown()
-    }
-    else {
-      tempSeconds = tempSeconds - 1
-      temp = document.querySelector('.seconds')
-      temp.innerHTML = tempSeconds
-    }
-  }, 1000)
-}
-
-// fancy display hiding based on conditions (not working yet)
-
-function gameDisplay() {
-  if (wordLevel = 0) {
-    gameMain = document.querySelector('main')
-    gameMain.style.display = "none"
-  }
-}
-
 */
