@@ -38,8 +38,8 @@ function togglePlay() {
 }
 
 function play () {
-  secondsDOM.innerHTML = seconds
   if (playAuth === true) {
+  secondsDOM.innerHTML = seconds
   togglePlay()
   timer = window.setInterval(interval, 1000)
   wordLevel = 1
@@ -119,9 +119,12 @@ resetDOM.addEventListener('click', reset)
 
 
 /*
-htmlBody.addEventListener('mousemove', dynaBack)
+Control flow for timer:
 
-function dynaBack(e){
-  document.body.style.background = `linear-gradient(rgba(0,0,${e.screenX+200},${(e.screenY/1500)+(e.screenX/3000)}),white,rgba(${e.screenX+100},0,0,.2}),white,rgba(0,0,${e.screenY+100},${(e.screenY/1500)+(e.screenX/3000)})`
-}
+declare variable for timer (var timer)
+set timer equal to the setInterval method (parameter1 is the function to invoke, parameter2 the number of milliseconds)
+function to invoke? that is my interval() function which reads the seconds innerHTML and reduces by one with each iteration
+iterations are driven by the setInterval method until it is halted
+tie the end of that setInterval method to your "reset" or "end" function
+I end the timer with the reset() function which invokes stopInterval() that contains the clearTimeout(timer) method - this halts the background "every second invoke interval()" function
 */
