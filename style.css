@@ -139,7 +139,7 @@ form {
   grid-row-end: 6;
   background-color: #dd0100;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 30px;
   justify-content: center;
   align-items: center;
@@ -192,7 +192,7 @@ form {
   grid-row-start: 6;
   grid-row-end: 7;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: normal;
   text-align: center;
   background-color: #ffffff;
   align-items: center;

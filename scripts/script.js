@@ -34,7 +34,13 @@ function resetTimer () {
 }
 
 function togglePlay() {
+  if (wordLevel >= 1) {
   playAuth = !playAuth
+  wordLevel = 0
+  }
+  else {
+  playAuth = !playAuth
+  }
 }
 
 function play () {
