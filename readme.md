@@ -1,15 +1,23 @@
-**Contact: The Game**
+#**Contact: The Game**
 
-Current projects:
+Contact is a word trivia game inspired by a game I played in the outdoors with family and friends growing up.
 
-Responsive Styling for Mobile & Desktop
+#**Technologies**
+
+I utilized HTML, CSS, and Javascript to create a desktop-based game
+
+##Ongoing projects:
+Expanding game to include dictionary array (2500+ strings)
+http://wordlist.aspell.net/12dicts/
+Responsive Styling for Mobile
 http://mediag.com/news/popular-screen-resolutions-designing-for-all/
 
-CSS Grid in Main .game HTML
-Play/Time/Reset Button Functionality (responsive z index based on event)
-Level Number Display Functionality
-Letters Number Display for this level
-Prompt Box: Designed to be short string for each pre-determined level (1-10)
-Level 1: a (gimme, show user how game works)
-Level 2: an (another gimme, show user how game works)
-Level 3: amp (starts with A, )
+
+The deliverables for your project are:
+
+```- A hosted copy of your game, built by you, hosted on Github Pages
+- Your HTML/CSS should pass the HTML5 Validator and CSS Validator
+- A git repository hosted on Github with frequent commits dating back to the very beginning of the project
+- A link to your hosted project in the URL section of your Github repo
+- A readme.md file, including
+    - Explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.```

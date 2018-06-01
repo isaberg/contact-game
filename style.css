@@ -5,8 +5,6 @@ body * {
 }
 
 body {
-/*removed for Mondrian  background: linear-gradient(rgba(0,0,125,.3),white,rgba(100,0,0,.2),white,rgba(0,0,125,.2))
-*/
 background-color: black;
 }
 
@@ -19,10 +17,10 @@ background-color: black;
     border: 7px white;
     background-color: black;
     display: grid;
-    grid-template-rows: repeat(12, 1fr)
+    grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 10px;
     place-items: stretch;
+    grid-gap: 10px;
     overflow: hidden;
     font-weight: bold;
     color: black;
@@ -39,7 +37,7 @@ header {
 h1 {
   text-align: center;
   margin: 0px auto;
-  font-size: 60px;
+  font-size: 50px;
   font-stretch: expanded;
 }
 
@@ -47,13 +45,13 @@ h2 {
   color: #dd0100;
   text-align: center;
   padding: 0px;
-  margin: 10px auto 20px auto;
+  margin: 5px auto 10px auto;
   line-height: 20px;
 }
 
 h3 {
   text-align: center;
-  margin: 15px auto 0px auto;
+  margin: 10px auto 10px auto;
   padding: 0;
   font-size: 25px;
 }
@@ -62,7 +60,7 @@ h4 {
   text-align: center;
   margin: 10px auto 0px auto;
   padding: 0;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 p {
@@ -189,10 +187,11 @@ form {
   grid-row-end: 10;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 24px;
   background-color: #ffffff;
   align-items: center;
   justify-items: center;
+  text-align: center;
 }
 
 .promptBoxText {
