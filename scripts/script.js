@@ -17,10 +17,17 @@ const buttonDOM = document.querySelector('#submit')
 const playDOM = document.querySelector('#play')
 const resetDOM = document.querySelector('#reset')
 
+
+buttonDOM.addEventListener('click', wordGrab)
+inputDOM.addEventListener('keydown', wordGrabEnter)
+playDOM.addEventListener('click', play)
+resetDOM.addEventListener('click', reset)
+
+
 function reset () {
   if (playAuth === false) {
   stopInterval()
-  secondsDOM.innerHTML = seconds
+  resetTimer()
   alert(`Game over! You got to level ${wordLevel}!`)
   togglePlay()
   }
@@ -45,11 +52,10 @@ function togglePlay() {
 
 function play () {
   if (playAuth === true) {
-  secondsDOM.innerHTML = seconds
+  resetTimer()
   togglePlay()
   timer = window.setInterval(interval, 1000)
   wordLevel = 1
-  console.log(`Game play initiated! wordLevel is ${wordLevel}`)
   levelDOM.innerHTML = wordLevel
   promptDOM.innerHTML = wordPrompt[wordLevel-1]
   }
@@ -64,7 +70,6 @@ function levelUp () {
     wordLevel = wordLevel + 1
     inputDOM.value = ""
     levelDOM.innerHTML = wordLevel
-    console.log(`${levelDOM.innerHTML} is the level of play.`)
     promptDOM.innerHTML = wordPrompt[wordLevel-1]
   }
   else {
@@ -75,7 +80,6 @@ function levelUp () {
 function wordGrab(e) {
     e.preventDefault()
     word = inputDOM.value
-    console.log(`wordGrab'd ${inputDOM.value}`)
     wordCheck(word)
 }
 
@@ -83,14 +87,12 @@ function wordGrabEnter(e) {
   if (e.keycode === 13) {
     e.preventDefault()
     word = inputDOM.value
-    console.log(`wordGrab'd ${inputDOM.value}`)
     wordCheck(word)
   }
 }
 
 function wordCheck (word) {
   if (word === wordArray[wordLevel-1]) {
-    console.log('Level up activated!')
     levelUp()
   }
   else {
@@ -113,24 +115,3 @@ function interval () {
 function stopInterval () {
     clearTimeout(timer)
   }
-
-function notify (e) {
-  console.log(e)
-}
-
-buttonDOM.addEventListener('click', wordGrab)
-inputDOM.addEventListener('keydown', wordGrabEnter)
-playDOM.addEventListener('click', play)
-resetDOM.addEventListener('click', reset)
-
-
-/*
-Control flow for timer:
-
-declare variable for timer (var timer)
-set timer equal to the setInterval method (parameter1 is the function to invoke, parameter2 the number of milliseconds)
-function to invoke? that is my interval() function which reads the seconds innerHTML and reduces by one with each iteration
-iterations are driven by the setInterval method until it is halted
-tie the end of that setInterval method to your "reset" or "end" function
-I end the timer with the reset() function which invokes stopInterval() that contains the clearTimeout(timer) method - this halts the background "every second invoke interval()" function
-*/
